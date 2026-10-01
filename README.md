@@ -1,50 +1,41 @@
-# 🍦 Ice Cream Sales Prediction — Azure Machine Learning
+# Ice Cream Sales — Azure Machine Learning
 
-This project uses a **Linear Regression** model to predict ice cream sales based on temperature data.
-It was my first hands-on experience with **scikit-learn** and **Azure Machine Learning**, where I trained, tested, and deployed a regression model through a local notebook.
+A machine learning project that predicts ice cream sales based on temperature using Linear Regression.
 
----
+This project was my first hands-on experience with machine learning using scikit-learn and with training, registering, deploying, and consuming a model through Azure Machine Learning.
 
-## 🔍 Project Overview
+## Workflow
 
-The goal was to estimate the number of ice cream sales given certain temperature values.
-After training the model, it was able to make predictions such as **1444** and **908** sales for different temperature inputs.
+The project covers:
 
-The notebook includes:
+- Data preparation with Pandas
+- Train/test splitting
+- Linear Regression with scikit-learn
+- Model evaluation using RMSE and R²
+- Experiment and model tracking with MLflow
+- Remote training with Azure Machine Learning
+- Model registration
+- Managed Online Endpoint deployment
+- Model inference through the deployed endpoint
 
-* Data preprocessing and visualization
-* Model training with scikit-learn
-* Model evaluation
-* Connection to Azure ML for deployment and testing
+## Technologies
 
----
+- Python
+- scikit-learn
+- Pandas
+- NumPy
+- MLflow
+- Azure Machine Learning
+- Jupyter Notebook
 
-## 💡 What I Learned
+## Model
 
-This project taught me several important concepts, including:
+The model uses temperature as the input feature and predicts the expected number of ice cream sales.
 
-* How to build and train a regression model using **scikit-learn**
-* How to prepare and register **datasets** for testing in Azure ML
-* How to **deploy** a trained model to Azure Machine Learning
-* How to **communicate with the deployed model** via endpoints
-* Basic use of the **Azure CLI** to manage resources and workflows
+The dataset is split into training and testing sets before fitting a Linear Regression model. RMSE and R² are calculated and logged through MLflow.
 
----
+## Azure Machine Learning
 
-## 🧠 Tech Stack
+The training script can be submitted as an Azure Machine Learning job.
 
-* Python
-* scikit-learn
-* Azure Machine Learning
-* Azure CLI
-* Jupyter Notebook
-
----
-
-## 🚀 Results
-
-The model produced rounded sales predictions close to **1444** and **908**, showing that even a simple regression approach can provide valuable insights.
-
----
-
-This project represents my first steps into machine learning model deployment and cloud integration using Azure ML.
+After training, the resulting MLflow model is registered in Azure Machine Learning and deployed through a Managed Online Endpoint, allowing predictions to be requested remotely.
